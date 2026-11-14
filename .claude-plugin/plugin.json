@@ -1,6 +1,6 @@
 {
   "name": "cold-emailing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Aplicație de cold emailing B2B ca skill Claude: căutare de firme și contacte, emailuri personalizate fără em dash, follow-up, răspunsuri și statistici, cu memorie persistentă în SQLite.",
   "author": {
     "name": "Zeroday Technologies"
