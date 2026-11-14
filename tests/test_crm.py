@@ -76,6 +76,8 @@ class CRMTest(unittest.TestCase):
         inc = self.crm("inbound", payload={"from_email": "ion@alfa.ro", "classification": "interested",
                                             "body": "Da", "received_at": "2026-01-03 10:00"})
         self.assertEqual(inc["company"]["status"], "interested")
+        self.assertTrue(any("verified" in e for e in inc["effects"]))
+        self.assertEqual(self.crm("contact", "show", "1")["email_status"], "verified")
         fu = self.crm("followups")
         self.assertEqual(len(fu["needs_reply"]), 1)
         st = self.crm("stats", "--by", "offering")

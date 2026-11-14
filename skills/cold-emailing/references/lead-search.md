@@ -29,6 +29,8 @@ python3 "$SKILL_DIR/scripts/crm.py" search add --json '{"criteria": {"industry":
 
 Folosește căutarea web și citirea paginilor. Notează mereu URL-urile surselor în `source_urls`.
 
+**Pornește de la liste filtrate, nu de la căutări generale.** Căutările de tipul „distribuitor Cluj B2B” dau rezultate amestecate și consumă mult timp. Mai eficient: identifică 2-5 coduri CAEN (sau codurile NACE echivalente în alte țări) potrivite domeniului. Deschide apoi listele de firme dintr-un registru filtrate după județ/regiune și cod, sortate după numărul de angajați (ex. pe topfirme.com: `/judet/<judet>/caen/<cod>/numar-angajati/`). Din ele alegi candidații care se încadrează la mărime și vechime și abia apoi le verifici site-ul. Țintește cam 2-3 candidați verificați pentru fiecare firmă cerută și oprește-te când ai numărul cerut. Unele registre blochează accesul automat; dacă unul refuză, treci la altul în loc să insiști.
+
 ### România
 - **listafirme.ro, termene.ro, risco.ro, topfirme.com**: cifră de afaceri, nr. angajați, an înființare, CAEN, administratori/asociați (unele date doar cu cont).
 - **mfinante.gov.ro** (informații fiscale și bilanțuri după CUI) și **API-ul public ANAF** pentru CUI: denumire, adresă, data înregistrării, stare.

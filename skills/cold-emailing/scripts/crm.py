@@ -971,6 +971,13 @@ def inbound_add(conn, data: dict) -> dict:
     mid = insert(conn, "messages", data)
 
     effects = []
+    # un răspuns (chiar și automat) de pe adresa contactului dovedește că adresa există
+    if cls != "bounce" and data.get("contact_id"):
+        ct = get_row(conn, "contacts", data["contact_id"])
+        same = not data.get("from_email") or normalize_email(data["from_email"]) == normalize_email(ct["email"])
+        if ct and ct["email"] and same and ct["email_status"] in ("guessed", "found", "unknown", "catch_all"):
+            conn.execute("UPDATE contacts SET email_status = 'verified', updated_at = ? WHERE id = ?", (now(), ct["id"]))
+            effects.append(f"email {ct['email']}: {ct['email_status']} -> verified (a răspuns de pe el)")
     if new_status:
         set_company_status(conn, cid, new_status, note=f"răspuns: {cls}",
                            force=new_status in ("not_interested", "do_not_contact", "bounced", "paused"))
