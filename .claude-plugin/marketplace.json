@@ -1,0 +1,13 @@
+{
+  "name": "zeroday-cold-emailing",
+  "owner": {
+    "name": "Zeroday Technologies"
+  },
+  "plugins": [
+    {
+      "name": "cold-emailing",
+      "source": "./",
+      "description": "Aplicație de cold emailing B2B cu memorie persistentă: lead-uri, contacte, emailuri, follow-up, statistici."
+    }
+  ]
+}

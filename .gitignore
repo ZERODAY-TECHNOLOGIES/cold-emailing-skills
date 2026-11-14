@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+dist/
+.DS_Store
+# date locale de test
+cold-email-data/
+*.db

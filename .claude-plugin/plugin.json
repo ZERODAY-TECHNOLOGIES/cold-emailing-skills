@@ -1,0 +1,16 @@
+{
+  "name": "cold-emailing",
+  "version": "1.0.0",
+  "description": "Aplicație de cold emailing B2B ca skill Claude: căutare de firme și contacte, emailuri personalizate fără em dash, follow-up, răspunsuri și statistici, cu memorie persistentă în SQLite.",
+  "author": {
+    "name": "Zeroday Technologies"
+  },
+  "repository": "https://github.com/zeroday-technologies/cold-emailing-skills",
+  "keywords": [
+    "cold-email",
+    "outreach",
+    "lead-generation",
+    "crm",
+    "sales"
+  ]
+}
